@@ -69,7 +69,7 @@ while True:
                         last_signal_time_2 = current_time
 
                     # Check if both signals happened within 5 seconds
-                    if abs(last_signal_time_1 - last_signal_time_2) <= 5 and last_signal_time_1 != 0 and last_signal_time_2 != 0:
+                    if abs(last_signal_time_1 - last_signal_time_2) <= 10 and last_signal_time_1 != 0 and last_signal_time_2 != 0:
                         print("Detected Hi!")
                         say("Hi")
                         last_signal_time_1 = 0
