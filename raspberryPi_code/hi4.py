@@ -51,7 +51,17 @@ while True:
 
                     current_time = time.time()
 
-                   
+                    # Check for "H"
+                    if thumb_val > 99 and pointer_val > 117:
+                        #print("Detected H (Thumb and Pointer released)")
+                        #say("H")
+                        last_H_time = current_time
+
+                    # Check for "I"
+                    if (thumb_val < 97) and (pointer_val < 114) and (middle_val < 970) and (second_val < 120) and (pinky_val > 570):
+                        #print("Detected I (All except Pinky bent)")
+                        #say("I")
+                        last_I_time = current_time
 
                     # Check for "Hi" (H + I within 5 seconds)
                     if abs(last_H_time - last_I_time) <= 5 and last_H_time != 0 and last_I_time != 0:
