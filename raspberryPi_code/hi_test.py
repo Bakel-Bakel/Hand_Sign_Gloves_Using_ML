@@ -75,6 +75,25 @@ while True:
                         last_signal_time_1 = 0
                         last_signal_time_2 = 0
 
+                    # First signal (for "t"): All fingers bent
+                    if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold \
+                         and fourth_finger_val > 134 and pinky_val > pinky_bent_threshold:
+                        print("First signal detected: All fingers bent.")
+                        last_signal_time_t = current_time
+
+                    # Second signal (for "h"): Thumb and pointer straight, rest bent
+                    if  pointer_val < 138 and pointer_val > 117 \
+                        and fourth_finger_val > 134 and pinky_val > pinky_bent_threshold:
+                        print("First signal detected: Thumb and pointer straight, rest bent.")
+                        last_signal_time_h = current_time
+
+                    # Check if both "t" and "h" signals are met within 2 seconds
+                    if abs(last_signal_time_t - last_signal_time_h) <= 2 and last_signal_time_t != 0 and last_signal_time_h != 0:
+                        print("Detected 'the'!")
+                        say("the")
+                        last_signal_time_t = 0
+                        last_signal_time_h = 0
+
             except Exception as e:
                 print(f"Error processing data: {e}")
 
