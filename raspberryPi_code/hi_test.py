@@ -57,14 +57,14 @@ while True:
                     current_time = time.time()
 
                     # First signal: Thumb and pointer straight, rest bent
-                    if thumb_val < thumb_straight_threshold and pointer_val < pointer_straight_mean and pointer_val > 117 \
-                        and middle_finger_val < 970 and fourth_finger_val < 134 and pinky_val > pinky_bent_threshold:
+                    if  pointer_val < 138 and pointer_val > 117 \
+                        and fourth_finger_val > 134 and pinky_val > pinky_bent_threshold:
                         print("First signal detected: Thumb and pointer straight, rest bent.")
                         last_signal_time_1 = current_time
 
                     # Second signal: Pinky straight, rest bent
-                    if pinky_val < pinky_bent_threshold and thumb_val < thumb_bent_threshold and pointer_val < pointer_bent_threshold \
-                        and middle_finger_val < 970 and fourth_finger_val < 134:
+                    if pinky_val < pinky_bent_threshold and thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold \
+                         and fourth_finger_val > 134:
                         print("Second signal detected: Pinky straight, rest bent.")
                         last_signal_time_2 = current_time
 
