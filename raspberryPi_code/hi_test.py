@@ -17,6 +17,8 @@ buffer = ""
 last_signal_time_1 = 0  # Time when the first signal was detected
 last_signal_time_2 = 0  # Time when the second signal was detected
 last_spoken_time = 0
+last_signal_time_w = 0
+last_signal_time_e = 0
 
 # Set calibration thresholds
 thumb_straight_threshold = 120  # Thumb straight if below 120
