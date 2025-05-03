@@ -20,7 +20,7 @@ draw = ImageDraw.Draw(image)
 font = ImageFont.load_default()
 
 # Draw the text "Hello" at the top-left corner
-draw.text((0, 0), "We are BME of 25", font=font, fill=255)
+draw.text((0, 0), "Hi, We are BME of 25", font=font, fill=255)
 
 # Display the image with the drawn text
 oled.image(image)
