@@ -1,27 +1,26 @@
 import time
 import board
-import digitalio
 from adafruit_ssd1306 import SSD1306_I2C
 from PIL import Image, ImageDraw, ImageFont
 
-# Create the I2C bus
+# Initialize the I2C bus
 i2c = board.I2C()
 
-# Set up the OLED display
-oled = SSD1306_I2C(128, 64, i2c)
+# Set up the OLED display (128x64 resolution) with I2C address 0x3C
+oled = SSD1306_I2C(128, 64, i2c, addr=0x3C)
 
 # Create an image object to draw text
 image = Image.new("1", (oled.width, oled.height))
 draw = ImageDraw.Draw(image)
 
-# Load a default font
+# Load the default font
 font = ImageFont.load_default()
 
 # Clear the display
 oled.fill(0)
 oled.show()
 
-# Draw text on the image object
+# Draw text on the image object (display "Hello")
 draw.text((0, 0), "Hello", font=font, fill=255)
 
 # Display the image with the drawn text
