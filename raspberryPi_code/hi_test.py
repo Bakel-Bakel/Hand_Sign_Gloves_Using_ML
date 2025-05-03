@@ -183,7 +183,7 @@ while True:
                         time.sleep(5)
                         say("25")
 
-                   ''' if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold  \
+                    ''' if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold  \
                         and fourth_finger_val > fourth_bent_threshold and pinky_val < pinky_bent_threshold:
                         print("First signal detected: All fingers bent, pinky straight (A).")
                         last_signal_time_a = current_time
