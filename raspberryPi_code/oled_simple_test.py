@@ -8,6 +8,6 @@ device = ssd1306(serial, rotate=0)
 
 with canvas(device) as draw:
     draw.text((10, 40), "Hello World", fill="white")
-    draw.text((10, 50), "from peppe8o.com!", fill="white")
+    draw.text((10, 70), "from peppe8o.com!", fill="white")
 
-sleep(5)
+sleep(10)
