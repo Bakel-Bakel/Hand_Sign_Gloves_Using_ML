@@ -102,7 +102,7 @@ while True:
 
                     # Second signal (for "e"): All fingers bent
                     if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold and \
-                        and fourth_finger_val > fourth_bent_threshold and pinky_val > pinky_bent_threshold:
+                        fourth_finger_val > fourth_bent_threshold and pinky_val > pinky_bent_threshold:
                         print("Second signal detected: All fingers bent (E).")
                         last_signal_time_e = current_time
 
