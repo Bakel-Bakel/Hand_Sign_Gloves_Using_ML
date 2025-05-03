@@ -1,6 +1,27 @@
 import os
 import socket
 import time
+import time
+import board
+import busio
+import adafruit_ssd1306
+from PIL import Image, ImageDraw, ImageFont
+
+# I2C setup
+i2c = busio.I2C(board.SCL, board.SDA)
+
+# OLED setup (128x64)
+oled = adafruit_ssd1306.SSD1306_I2C(128, 64, i2c, addr=0x3C)
+oled.fill(0)
+oled.show()
+
+# Create image buffer
+image = Image.new("1", (128, 64))
+draw = ImageDraw.Draw(image)
+
+# Load the default font
+font = ImageFont.load_default()
+
 
 HOST = ''
 PORT = 1234
@@ -83,6 +104,19 @@ while True:
                         last_signal_time_1 = 0
                         last_signal_time_2 = 0
 
+                        # Draw the text "Hello" at the top-left corner
+                        draw.text((0, 0), "We are BME of 25", font=font, fill=255)
+
+                        # Display the image with the drawn text
+                        oled.image(image)
+                        oled.show()
+
+                        # Keep the "Hello" message visible for 5 seconds
+                        time.sleep(5)
+
+                        # Clear the display after the delay
+                        oled.fill(0)
+                        oled.show()
                         time.sleep(5)
                         say("we")
                         time.sleep(6)
@@ -97,6 +131,7 @@ while True:
                         say("of")
                         time.sleep(5)
                         say("25")
+                       
                     '''
                     # First signal (for "t"): All fingers bent
                     if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold \
