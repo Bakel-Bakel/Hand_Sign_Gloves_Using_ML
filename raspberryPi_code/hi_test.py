@@ -143,26 +143,25 @@ while True:
                          and fourth_finger_val < 134 and pinky_val < pinky_bent_threshold:
                         print("First signal detected: All fingers straight except thumb bent (B).")
                         last_signal_time_B = current_time
+                        # Second signal (for "M"): All fingers bent
+                        if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold  \
+                            and fourth_finger_val > fourth_bent_threshold and pinky_val > pinky_bent_threshold:
+                            print("Second signal detected: All fingers bent (M).")
+                            last_signal_time_M = current_time
 
-                    # Second signal (for "M"): All fingers bent
-                    if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold  \
-                        and fourth_finger_val > fourth_bent_threshold and pinky_val > pinky_bent_threshold:
-                        print("Second signal detected: All fingers bent (M).")
-                        last_signal_time_M = current_time
+                        # Check if both "B" and "M" signals are met within 3 seconds
+                        if abs(last_signal_time_B - last_signal_time_M) <= 5 and last_signal_time_B != 0 and last_signal_time_M != 0:
+                            time.sleep(1.5)
+                            print("Detected 'E'!")
+                            say("E")
+                            last_signal_time_B = 0
+                            last_signal_time_M = 0
 
-                    # Check if both "B" and "M" signals are met within 3 seconds
-                    if abs(last_signal_time_B - last_signal_time_M) <= 5 and last_signal_time_B != 0 and last_signal_time_M != 0:
-                        time.sleep(1.5)
-                        print("Detected 'E'!")
-                        say("E")
-                        last_signal_time_B = 0
-                        last_signal_time_M = 0
+                            time.sleep(3)
+                            say("of")
 
-                        time.sleep(3)
-                        say("of")
-
-                        time.sleep(4)
-                        say("25")
+                            time.sleep(4)
+                            say("25")
 
             except Exception as e:
                 print(f"Error processing data: {e}")
