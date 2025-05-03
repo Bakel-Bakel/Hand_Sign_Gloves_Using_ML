@@ -82,6 +82,21 @@ while True:
                         say("Hi")
                         last_signal_time_1 = 0
                         last_signal_time_2 = 0
+
+                        time.sleep(5)
+                        say("we")
+                        time.sleep(6)
+                        say("are")
+                        time.sleep(6)
+                        say("B")
+                        time.sleep(1)
+                        say("M")
+                        time.sleep(1)
+                        say("E")
+                        time.sleep(4)
+                        say("of")
+                        time.sleep(5)
+                        say("25")
                     '''
                     # First signal (for "t"): All fingers bent
                     if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold \
@@ -101,7 +116,7 @@ while True:
                         print("Detected 'the'!")
                         say("the")
                         last_signal_time_t = 0
-                        last_signal_time_h = 0'''
+                        last_signal_time_h = 0
                     # First signal (for "w"): First, second, and fourth fingers straight, fifth bent
                     if thumb_val < thumb_straight_threshold and pointer_val < 138 \
                         and fourth_finger_val < fourth_bent_threshold and pinky_val > pinky_bent_threshold:
@@ -163,7 +178,7 @@ while True:
                             say("of")
 
                             time.sleep(4)
-                            say("25")
+                            say("25")'''
 
             except Exception as e:
                 print(f"Error processing data: {e}")
