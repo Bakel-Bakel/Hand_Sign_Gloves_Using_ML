@@ -144,6 +144,7 @@ while True:
                          and fourth_finger_val < 134 and pinky_val < pinky_bent_threshold:
                         print("First signal detected: All fingers straight except thumb bent (B).")
                         last_signal_time_B = current_time
+                        time.sleep(2)
                         # Second signal (for "M"): All fingers bent
                         if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold  \
                             and fourth_finger_val > fourth_bent_threshold and pinky_val > pinky_bent_threshold:
