@@ -183,50 +183,6 @@ while True:
                         time.sleep(5)
                         say("25")
 
-                    ''' if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold  \
-                        and fourth_finger_val > fourth_bent_threshold and pinky_val < pinky_bent_threshold:
-                        print("First signal detected: All fingers bent, pinky straight (A).")
-                        last_signal_time_a = current_time
-
-                    # Second signal (for "are"): Thumb and pointer straight, rest bent
-                    if thumb_val < thumb_straight_threshold and pointer_val < 138 \
-                         and fourth_finger_val > 134 and pinky_val > pinky_bent_threshold:
-                        print("Second signal detected: Thumb and pointer straight, rest bent (ARE).")
-                        say("are")
-                        last_signal_time_are = current_time
-
-                    # Check if both "a" and "are" signals are met within 5 seconds
-                    if abs(last_signal_time_a - last_signal_time_are) <= 7 and last_signal_time_a != 0 and last_signal_time_are != 0:
-                        print("Detected 'are'!")
-                        say("are")
-                        last_signal_time_a = 0
-                        last_signal_time_are = 0
-                    
-                    if thumb_val > thumb_bent_threshold and pointer_val < 138 \
-                         and fourth_finger_val < 134 and pinky_val < pinky_bent_threshold:
-                        print("First signal detected: All fingers straight except thumb bent (B).")
-                        last_signal_time_B = current_time
-                        time.sleep(2)
-                        # Second signal (for "M"): All fingers bent
-                        if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold  \
-                            and fourth_finger_val > fourth_bent_threshold and pinky_val > pinky_bent_threshold:
-                            print("Second signal detected: All fingers bent (M).")
-                            last_signal_time_M = current_time
-
-                        # Check if both "B" and "M" signals are met within 3 seconds
-                        if abs(last_signal_time_B - last_signal_time_M) <= 5 and last_signal_time_B != 0 and last_signal_time_M != 0:
-                            time.sleep(1.5)
-                            print("Detected 'E'!")
-                            say("E")
-                            last_signal_time_B = 0
-                            last_signal_time_M = 0
-
-                            time.sleep(3)
-                            say("of")
-
-                            time.sleep(4)
-                            say("25")'''
-
             except Exception as e:
                 print(f"Error processing data: {e}")
 
