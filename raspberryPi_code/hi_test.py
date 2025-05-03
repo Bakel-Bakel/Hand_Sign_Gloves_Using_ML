@@ -105,7 +105,7 @@ while True:
                         last_signal_time_2 = 0
 
                         # Draw the text "Hello" at the top-left corner
-                        draw.text((0, 0), "We are BME of 25", font=font, fill=255)
+                        draw.text((0, 0), "hi, We are BME of 25", font=font, fill=255)
 
                         # Display the image with the drawn text
                         oled.image(image)
@@ -118,7 +118,7 @@ while True:
                         oled.fill(0)
                         oled.show()
                         time.sleep(5)
-                        say("we")
+                        '''say("we")
                         time.sleep(6)
                         say("are")
                         time.sleep(6)
@@ -130,10 +130,10 @@ while True:
                         time.sleep(4)
                         say("of")
                         time.sleep(5)
-                        say("25")
+                        say("25")'''
                        
-                    '''
-                    # First signal (for "t"): All fingers bent
+                    
+                    '''# First signal (for "t"): All fingers bent
                     if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold \
                          and fourth_finger_val > 134 and pinky_val > pinky_bent_threshold:
                         print("First signal detected: All fingers bent.")
@@ -151,7 +151,7 @@ while True:
                         print("Detected 'the'!")
                         say("the")
                         last_signal_time_t = 0
-                        last_signal_time_h = 0
+                        last_signal_time_h = 0'''
                     # First signal (for "w"): First, second, and fourth fingers straight, fifth bent
                     if thumb_val < thumb_straight_threshold and pointer_val < 138 \
                         and fourth_finger_val < fourth_bent_threshold and pinky_val > pinky_bent_threshold:
@@ -170,8 +170,20 @@ while True:
                         say("we")
                         last_signal_time_w = 0
                         last_signal_time_e = 0
+                        time.sleep(6)
+                        say("are")
+                        time.sleep(6)
+                        say("B")
+                        time.sleep(1)
+                        say("M")
+                        time.sleep(1)
+                        say("E")
+                        time.sleep(4)
+                        say("of")
+                        time.sleep(5)
+                        say("25")
 
-                    if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold  \
+                   ''' if thumb_val > thumb_bent_threshold and pointer_val > pointer_bent_threshold  \
                         and fourth_finger_val > fourth_bent_threshold and pinky_val < pinky_bent_threshold:
                         print("First signal detected: All fingers bent, pinky straight (A).")
                         last_signal_time_a = current_time
