@@ -130,10 +130,11 @@ while True:
                     if thumb_val < thumb_straight_threshold and pointer_val < 138 \
                          and fourth_finger_val > 134 and pinky_val > pinky_bent_threshold:
                         print("Second signal detected: Thumb and pointer straight, rest bent (ARE).")
+                        say("are")
                         last_signal_time_are = current_time
 
                     # Check if both "a" and "are" signals are met within 5 seconds
-                    if abs(last_signal_time_a - last_signal_time_are) <= 5 and last_signal_time_a != 0 and last_signal_time_are != 0:
+                    if abs(last_signal_time_a - last_signal_time_are) <= 7 and last_signal_time_a != 0 and last_signal_time_are != 0:
                         print("Detected 'are'!")
                         say("are")
                         last_signal_time_a = 0
