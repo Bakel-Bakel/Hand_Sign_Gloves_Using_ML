@@ -165,7 +165,7 @@ while True:
                         last_signal_time_e = current_time
 
                     # Check if both "w" and "e" signals are met within 3 seconds
-                    if abs(last_signal_time_w - last_signal_time_e) <= 3 and last_signal_time_w != 0 and last_signal_time_e != 0:
+                    if abs(last_signal_time_w - last_signal_time_e) <= 7 and last_signal_time_w != 0 and last_signal_time_e != 0:
                         print("Detected 'we'!")
                         say("we")
                         last_signal_time_w = 0
