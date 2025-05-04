@@ -1,1 +1,1 @@
-# Hand_Sign_Gloves_Using_ML
+# Hand Sign Gloves Using ML
